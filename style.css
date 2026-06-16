@@ -117,7 +117,7 @@ nav a::after {
     width: 0;
     height: 2px;
     background: var(--accent-gradient);
-    transition: width 0.3s ease;
+    transition: width 0.2s ease-out;
 }
 
 nav a:hover::after {
@@ -335,60 +335,7 @@ footer {
 /* ==========================================================================
    UPDATED MOBILE NAVIGATION DRAW LAYOUTS
    ========================================================================== */
-@media (max-width: 1015px) {
-    .hero-content h1 { font-size: 2.8rem; }
-    .hero-content h2 { font-size: 1.5rem; }
-    header { padding: 1.2rem 5%; }
-    #contact-form { padding: 2rem; }
 
-    /* Show hidden hamburger control blocks */
-    .menu-btn {
-        display: block;
-        cursor: pointer;
-        font-size: 1.5rem;
-        user-select: none;
-        color: var(--text-color);
-    }
-
-    /* Convert link menu to overlay sliding dropdown drawer */
-    nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--card-bg);
-        border-bottom: 1px solid var(--border-color);
-        max-height: 0;
-        overflow: hidden;
-        visibility: hidden;
-        box-shadow: var(--shadow-md);
-        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 0;
-        padding: 0;
-    }
-
-    nav ul li {
-        width: 100%;
-        text-align: center;
-    }
-
-    nav ul li a {
-        display: block;
-        padding: 1.2rem;
-        width: 100%;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    /* Toggle visibility when check indicator triggers */
-    #menu-toggle:checked ~ nav {
-        max-height: 250px; 
-        visibility: visible;
-    }
-}
 .hero-photo{
     
    
@@ -421,4 +368,173 @@ justify-content: center;
     width: 220px;
     
     
+}
+/* ==========================================================================
+   1. DESKTOP / BASE HEADER LAYOUT
+   ========================================================================== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--header-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 8%;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    transition: background-color 0.4s, border-color 0.4s;
+}
+
+/* Container for your logo image and text */
+.icon_port {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+#icon {
+    height: 35px; /* Adjust size cleanly */
+    width: auto;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#icon:hover {
+    transform: scale(1.08);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+/* Hide checkbox and mobile button layout elements on desktop sizes */
+#menu-toggle, .menu-btn {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+#theme-toggle {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+
+/* ==========================================================================
+   2. MOBILE RESPONSIVE MEDIA QUERY (Dropdown & Fixed Toggle System)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 5%;
+        flex-wrap: wrap; /* Allows navigation container to slide underneath */
+    }
+
+    /* Displays the hamburger indicator button cleanly on mobile viewports */
+    .menu-btn {
+        display: block;
+        cursor: pointer;
+        font-size: 1.6rem;
+        order: 2; /* Forces hamburger icon to the far right */
+        color: var(--text-color);
+        user-select: none;
+        transition: transform 0.3s ease ;
+    }
+
+    /* Pulls button out of list flow and forces it to sit fixed right next to hamburger */
+    /* #theme-toggle {
+        order: 1; 
+        margin-right: 0.5rem;
+    } */
+
+    /* Convert Navigation block into an isolated overlay dropdown drawer */
+    nav {
+        position: absolute;
+        top: 100%; /* Sits flush right below the bottom header border line */
+        left: 0;
+        width: 20%;
+        background-color: var(--card-bg);
+        border-bottom: 1px solid var(--border-color);
+        
+        /* Core requirements for a scrollable dropdown container */
+        max-height: 0;
+        overflow-y: auto; /* Activates internal vertical scrolling if list overflows */
+        visibility: hidden;
+        box-shadow: var(--shadow-md);
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 0;
+        width: 100%;
+    }
+
+    /* Reformat button inside mobile dropdown list flow to hide it */
+    nav ul li button#theme-toggle {
+        display: none; 
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1.1rem 5%;
+        width: 100%;
+        border-bottom: 1px dashed var(--border-color);
+        font-size: 1.05rem;
+    }
+
+    nav ul li:last-child a {
+        border-bottom: none; /* Cleans up trailing item spacer line */
+    }
+
+    /* 3. Trigger Dropdown Extension when checkbox marker state is :checked */
+    #menu-toggle:checked ~ nav {
+        max-height: 280px; /* Limits size height and triggers scrollbar seamlessly */
+        visibility: visible;
+    }
+
+    /* Micro-animation: Spins hamburger icon slightly when open */
+    #menu-toggle:checked ~ .menu-btn {
+        transform: rotate(90deg);
+        color: var(--accent-color);
+    }
 }

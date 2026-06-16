@@ -1,11 +1,8 @@
 
 <!DOCTYPE html>
 <html lang="en">
-        <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+        <link rel="icon" type="image/x-icon" href="BD-removebg-preview.png">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,24 +12,26 @@
 </head>
 <body>
 
-    <header>
+  <header>
+      <button id="theme-toggle">🌙 Mode</button>
+    <div class="icon_port"> 
+        <img src="BD-removebg-preview.png" id="icon" class="logo" alt="Logo Icon">
         <div class="logo">MyPortfolio</div>
+    </div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-btn">☰</label>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://github.com/Deepak-Baghel1793" target="_blank">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/deepak-baghel-862bb5243/?skipRedirect=true" target="_blank">LinkedIn</a></li>
+        </ul>
+    </nav>
 
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-btn">☰</label>
-        <nav>
-          <ul>
-                <li><a href="https://github.com/Deepak-Baghel1793" target="_blank">Github</a></li>
-                <li><a href="https://www.linkedin.com/in/deepak-baghel-862bb5243/?skipRedirect=true" target="_blank">Linkdin</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="about.html" >About</a></li>
-               <li><a href="index.html">Home</a></li>
-            
-                <li><button id="theme-toggle">🌙 Mode</button></li>
-            </ul>
-        </nav>
-    </header>
+</header>
     <section id="contact" class="contact-section">
         <h2 class="section-title">Get In Touch</h2>
         <form id="contact-form">
