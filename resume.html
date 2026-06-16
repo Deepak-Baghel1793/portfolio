@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Deepak Baghel</title>
+    <style>
+        /* --- Core Styling & Color Palette --- */
+        :root {
+            --primary-color: #1e293b; /* Premium Deep Slate */
+            --accent-color: #2563eb;  /* Clean Tech Blue */
+            --text-color: #334155;
+            --light-bg: #f8fafc;
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: var(--text-color);
+            background-color: #e2e8f0;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        /* --- Page Layout A4 Constraint --- */
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        /* --- Header Section --- */
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header-left h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .header-left h2 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        .header-right p {
+            margin-bottom: 0.2rem;
+        }
+
+        .header-right a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .header-right a:hover {
+            text-decoration: underline;
+            color: var(--accent-color);
+        }
+
+        /* --- Section Layouts --- */
+        section {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        /* --- Experience & Education Blocks --- */
+        .item-block {
+            margin-bottom: 1rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        .item-sub {
+            display: flex;
+            justify-content: space-between;
+            font-style: italic;
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .item-details {
+            list-style-type: square;
+            margin-left: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .item-details li {
+            margin-bottom: 0.25rem;
+        }
+
+        /* --- Skills Grid Layout --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .skills-category {
+            background-color: var(--light-bg);
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .skills-category strong {
+            color: var(--primary-color);
+        }
+
+        /* --- Print Mode Optimizations --- */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            .btn-print {
+                display: none;
+            }
+        }
+
+        /* --- Optional Quick Action Button --- */
+        .btn-container {
+            max-width: 800px;
+            margin: 1rem auto;
+            text-align: right;
+        }
+
+        .btn-print {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-print:hover {
+            background-color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="btn-container">
+        <button class="btn-print" onclick="window.print()">🖨️ Save as PDF / Print</button>
+    </div>
+
+    <div class="resume-container">
+        
+        <header>
+            <div class="header-left">
+                <h1>Deepak Baghel</h1>
+                <h2>Software Engineer</h2>
+            </div>
+            <div class="header-right">
+                <p>📍 Gwalior, Madhya Pradesh</p>
+                <p>📧 <a href="mailto:deepak@example.com">deepak@example.com</a></p>
+                <p>🌐 <a href="https://github.com" target="_blank">github.com/deepak</a></p>
+                <p>💼 <a href="https://linkedin.com" target="_blank">linkedin.com/in/deepak</a></p>
+            </div>
+        </header>
+
+        <section>
+            <h3 class="section-title">Professional Summary</h3>
+            <p style="font-size: 0.95rem;">
+                Results-driven Computer Science Engineering graduate with a strong foundation in scalable backend architectures, image processing algorithms, and data management systems. Proven track record of optimizing algorithms and designing high-efficiency architectures for complex data engines.
+            </p>
+        </section>
+
+        <section>
+            <h3 class="section-title">Technical Skills</h3>
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <strong>Languages:</strong> C++, Python, SQL, JavaScript, HTML/CSS
+                </div>
+                <div class="skills-category">
+                    <strong>Frameworks & APIs:</strong> FastAPI, REST APIs
+                </div>
+                <div class="skills-category">
+                    <strong>Core CS Disciplines:</strong> Data Structures & Algorithms, DBMS, Signal Processing
+                </div>
+                <div class="skills-category">
+                    <strong>Specialized Fields:</strong> Computer Vision, Image Processing
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="section-title">Key Projects</h3>
+            
+            <div class="item-block">
+                <div class="item-header">
+                    <span>Scalable Microservices E-Commerce Engine</span>
+                    <span>Backend Application</span>
+                </div>
+                <div class="item-sub">
+                    <span>Python, FastAPI, Docker, Microservices</span>
+                    <span>2026</span>
+                </div>
+                <ul class="item-details">
+                    <li>Designed and implemented a modular microservices architecture utilizing FastAPI for handling independent order transactions, checkout flows, and user profiles.</li>
+                    <li>Integrated real-time database management operations to prevent race conditions during high-volume simulated load intervals.</li>
+                </ul>
+            </div>
+
+            <div class="item-block">
+                <div class="item-header">
+                    <span>AI-Powered Image Processing & Style Utility</span>
+                    <span>Computer Vision Tool</span>
+                </div>
+                <div class="item-sub">
+                    <span>C++, CVIP, Matrix Manipulations</span>
+                    <span>2025</span>
+                </div>
+                <ul class="item-details">
+                    <li>Developed high-performance pixel transformation matrices from scratch using raw C++ pointer operations to process batch style rendering parameters.</li>
+                    <li>Optimized filter transformation algorithms to achieve minimal execution latencies over raw baseline benchmarks.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="section-title">Achievements & Credentials</h3>
+            <div class="item-block">
+                <div class="item-header">
+                    <span>Two-Time GATE Qualifier (Computer Science)</span>
+                    <span>Score: 552</span>
+                </div>
+                <div class="item-sub">
+                    <span>Graduate Aptitude Test in Engineering</span>
+                    <span>2026</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="section-title">Education</h3>
+            <div class="item-block">
+                <div class="item-header">
+                    <span>Bachelor of Technology (B.Tech)</span>
+                    <span>Computer Science Engineering</span>
+                </div>
+                <div class="item-sub">
+                    <span>Technical University Core curriculum</span>
+                    <span>Graduation: 2026</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
