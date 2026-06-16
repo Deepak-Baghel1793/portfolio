@@ -365,7 +365,7 @@ justify-content: center;
     display: flex;
     align-items: center;
     justify-content:space-between ;
-    width: 220px;
+    width: 330px;
     
     
 }
@@ -463,6 +463,28 @@ nav a:hover {
         padding: 1rem 5%;
         flex-wrap: wrap; /* Allows navigation container to slide underneath */
     }
+    .hero-main{
+        display: block;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero-photo{
+    
+   
+     border-radius: 50%;
+   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.247); 
+    
+    height: 210px;
+    width: 210px;
+    
+margin-top: 20px;
+margin-left: 80px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+    
+}
 
     /* Displays the hamburger indicator button cleanly on mobile viewports */
     .menu-btn {
