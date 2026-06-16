@@ -344,7 +344,7 @@ footer {
     
     height: 210px;
     
-margin-top: 180px;
+margin-top: 1px;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -353,6 +353,8 @@ justify-content: center;
 }
 .hero-main{
     display: flex;
+    align-items: center;
+justify-content: center;
 
 }
 
@@ -488,7 +490,7 @@ justify-content: center;
 
     /* Displays the hamburger indicator button cleanly on mobile viewports */
     .menu-btn {
-        display: block;
+        display: inline;
         cursor: pointer;
         font-size: 1.6rem;
         order: 2; /* Forces hamburger icon to the far right */
